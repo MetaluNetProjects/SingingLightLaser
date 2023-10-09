@@ -1,0 +1,13 @@
+speed-forceDn 0.321608 0;
+speed-forceUp 0.281407 0;
+speed-justesseDn 0.150754 0;
+speed-justesseUp 0.432161 0;
+impact_seuil 33.0653 0;
+mic3_gain 1.00629 0;
+mic2_gain 0.993711 0;
+mic1_gain 0.993711 0;
+mix-Master 0.39196 0;
+mix-Basse 0.316583 0;
+mix-Accord 0.20603 0;
+mix-SynthMono 0.507538 0;
+mix-Nappe 0.271357 0;

@@ -1,0 +1,14 @@
+#N canvas 801 120 492 340 12;
+#X obj 90 53 r fromRemote;
+#X obj 90 77 route sends_\$1;
+#X obj 90 106 clone -s 1 sends_chan 10 \$1;
+#X obj 90 156 list trim;
+#X obj 90 181 s toRemoteDirect;
+#X obj 90 130 oscformat sends_\$1;
+#X obj 276 58 inlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 2 1;
