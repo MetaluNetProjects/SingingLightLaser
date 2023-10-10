@@ -1,88 +1,31 @@
-#N canvas 683 183 925 599 10;
-#X obj 21 498 netsend -b -u;
-#X obj 21 397 list prepend send;
-#X obj 21 421 list trim;
-#X obj 177 387 loadbang;
-#X obj 21 522 tgl 15 0 empty empty connected 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X msg 176 438 disconnect;
-#X msg 177 410 connect localhost 8000;
-#X obj 21 17 r mic1-justesse-snd;
-#X obj 144 17 r mic1-force-snd;
-#X obj 284 241 r mic3-force-snd;
-#X obj 161 242 r mic3-justesse-snd;
-#X obj 219 129 r mic2-force-snd;
-#X obj 96 129 r mic2-justesse-snd;
-#X obj 252 17 r mic1-impact-snd;
-#X obj 327 129 r mic2-impact-snd;
-#X obj 392 240 r mic3-impact-snd;
-#X obj 144 60 / 100;
-#X obj 219 168 / 100;
-#X obj 284 296 / 100;
-#X obj 21 80 / 100;
-#X obj 96 188 / 100;
-#X obj 161 316 / 100;
-#X obj 144 79 oscformat -f f /composition/layers/9/clips/1/dashboard/link1
-;
-#X obj 21 102 oscformat -f f /composition/layers/8/clips/1/dashboard/link2
-;
-#X obj 219 187 oscformat -f f /composition/layers/6/clips/1/dashboard/link1
-;
-#X obj 96 210 oscformat -f f /composition/layers/5/clips/1/dashboard/link2
-;
-#X obj 284 315 oscformat -f f /composition/layers/3/clips/1/dashboard/link1
-;
-#X obj 161 338 oscformat -f f /composition/layers/2/clips/1/dashboard/link2
-;
-#X obj 252 60 oscformat -f i /composition/layers/7/clips/1/transport/position/behaviour/playdirection
-, f 87;
-#X msg 252 38 0;
-#X obj 327 168 oscformat -f i /composition/layers/4/clips/1/transport/position/behaviour/playdirection
-, f 89;
-#X msg 327 148 0;
-#X obj 392 296 oscformat -f i /composition/layers/1/clips/1/transport/position/behaviour/playdirection
-, f 88;
-#X msg 392 276 0;
-#X obj 177 494 oscformat /composition/columns/1/connect;
-#X obj 21 542 sel 1;
-#X obj 21 563 del 500;
-#X obj 177 474 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#N canvas 796 144 377 336 10;
+#X obj 25 212 netsend -b -u;
+#X obj 25 111 list prepend send;
+#X obj 25 135 list trim;
+#X obj 181 101 loadbang;
+#X obj 25 236 tgl 15 0 empty empty connected 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 180 152 disconnect;
+#X msg 181 124 connect localhost 8000;
+#X obj 25 256 sel 1;
+#X obj 25 277 del 500;
+#X obj 181 188 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 25 19 r Analyse;
+#X msg 25 61 set \$1 \$2 \, \$3;
+#X obj 25 40 list;
+#X obj 25 83 oscformat -f f;
+#X obj 181 208 oscformat /connected;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 6 0;
-#X connect 4 0 35 0;
+#X connect 4 0 7 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X connect 7 0 19 0;
-#X connect 8 0 16 0;
-#X connect 9 0 18 0;
-#X connect 10 0 21 0;
-#X connect 11 0 17 0;
-#X connect 12 0 20 0;
-#X connect 13 0 29 0;
-#X connect 14 0 31 0;
-#X connect 15 0 33 0;
-#X connect 16 0 22 0;
-#X connect 17 0 24 0;
-#X connect 18 0 26 0;
-#X connect 19 0 23 0;
-#X connect 20 0 25 0;
-#X connect 21 0 27 0;
-#X connect 22 0 1 0;
-#X connect 23 0 1 0;
-#X connect 24 0 1 0;
-#X connect 25 0 1 0;
-#X connect 26 0 1 0;
-#X connect 27 0 1 0;
-#X connect 28 0 1 0;
-#X connect 29 0 28 0;
-#X connect 30 0 1 0;
-#X connect 31 0 30 0;
-#X connect 32 0 1 0;
-#X connect 33 0 32 0;
-#X connect 34 0 1 0;
-#X connect 35 0 36 0;
-#X connect 36 0 34 0;
-#X connect 37 0 34 0;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 14 0;
+#X connect 10 0 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 0;

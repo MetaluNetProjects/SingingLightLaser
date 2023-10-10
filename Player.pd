@@ -1,8 +1,8 @@
 #N canvas 155 140 550 313 10;
 #X declare -path absGAMME -path ../absGAMME -path ../RecallSong;
 #N canvas 482 701 457 279 MicrophonePitch 0;
-#X floatatom 19 110 5 0 0 3 pitch - -;
-#X floatatom 352 117 5 0 0 3 env - -;
+#X floatatom 19 110 5 0 0 3 pitch - - 0;
+#X floatatom 352 117 5 0 0 3 env - - 0;
 #X obj 230 139 > 70;
 #X obj 65 108 sel -1500;
 #X msg 65 134 0;
@@ -12,8 +12,7 @@
 #X obj 251 116 r MicSeuil;
 #X obj 65 39 adc~;
 #X obj 65 71 sigmund~ -hop 4096 -npts 4096 pitch env;
-#X obj 284 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 284 175 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 1;
 #X connect 2 0 11 0;
 #X connect 3 0 4 0;
@@ -26,7 +25,7 @@
 #X connect 10 1 2 0;
 #X connect 10 1 7 0;
 #X restore 51 36 pd MicrophonePitch;
-#N canvas 429 274 1413 678 SynthMono 1;
+#N canvas 429 274 1413 678 SynthMono 0;
 #X obj 127 335 phasor~;
 #X obj 99 206 t f f, f 18;
 #X obj 99 231 sel 0;
@@ -73,7 +72,7 @@
 #X obj 354 430 * 80;
 #X obj 354 451 + 50;
 #X obj 354 409 r bpfecho;
-#X floatatom 253 448 5 0 0 0 - - -;
+#X floatatom 253 448 5 0 0 0 - - - 0;
 #X obj 376 189 *~ 0.5;
 #X obj 550 571 table \$0-wavtable;
 #X obj 2 315 tabosc4~ \$0-wavtable;
@@ -93,7 +92,7 @@
 #X msg 551 523 normalize;
 #X obj 551 503 t b a;
 #X obj 590 176 t b f;
-#X floatatom 593 140 5 0 0 0 - - -;
+#X floatatom 593 140 5 0 0 0 - - - 0;
 #X obj 636 127 loadbang;
 #X msg 636 148 1.35;
 #X obj 681 318 f;
@@ -105,12 +104,10 @@
 #X obj 759 321 * -1;
 #X obj 759 340 + 1;
 #X obj 759 297 f;
-#X obj 779 192 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9779 1;
+#X obj 779 192 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 776 212 t b f;
 #X obj 3 350 lop~ 1000;
-#X obj 549 90 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3175 1;
+#X obj 549 90 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 546 110 * 2;
 #X obj 546 131 + 1;
 #X obj 681 362 f 0.5;
@@ -245,22 +242,19 @@
 #X obj 61 385 clone nappeVoice 16 Player\$1-nappe;
 #X obj 61 419 *~;
 #X obj 98 434 pow 2;
-#X obj 101 413 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 2667 1;
+#X obj 101 413 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 4064 1;
 #X obj 61 593 throw~ master;
 #X obj 95 565 rev1~ 92, f 58;
 #X obj 267 523 loadbang;
 #X msg 267 544 92;
 #X obj 95 544 *~, f 21;
 #X obj 218 523 pow 2;
-#X obj 221 502 hsl 128 15 0 2 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 8700 1;
+#X obj 221 502 hsl 128 15 0 2 0 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 8700 1;
 #X obj 94 520 lop~ 8000;
 #X obj 227 363 r mix-Nappe;
 #X obj 243 478 r nappeRev;
 #X obj 286 84 loadbang;
-#X obj 286 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 286 105 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 286 126 metro 20;
 #X obj 286 147 s LFOrnd-bang;
 #X obj 86 454 delwrite~ \$0-preDel 1000;
@@ -307,26 +301,23 @@
 #X restore 54 110 pd Nappe;
 #X obj 54 142 catch~ master;
 #X obj 54 163 dac~;
-#X obj 51 9 declare -path absGAMME -path ../absGAMME -path ../RecallSong
-;
+#X obj 51 9 declare -path absGAMME -path ../absGAMME -path ../RecallSong;
 #X obj 186 65 loadbang;
 #X msg 186 86 \; pd dsp 1;
 #X msg 262 94 _loaded;
 #X obj 262 115 stdout;
-#N canvas 523 304 694 520 analyse 1;
+#N canvas 274 140 694 576 analyse 1;
 #X obj 140 105 gammeRound /GAM2 300;
 #X obj 113 82 t f f;
 #X obj 78 152 -;
 #X obj 78 178 abs;
-#X obj 67 455 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1016 1;
+#X obj 67 455 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 113 48 r Player\$1-pitch;
 #X obj 78 198 - 0.2;
 #X obj 51 108 f;
 #X obj 51 77 metro 50;
 #X obj 51 32 loadbang;
-#X obj 51 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
+#X obj 51 53 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 51 129 sel 0;
 #X msg 51 265 0;
 #X obj 51 286 f;
@@ -334,18 +325,17 @@
 #X obj 78 241 + 120;
 #X obj 78 267 clip 0 150;
 #X obj 51 386 clip 0 100;
-#X obj 51 498 stdout;
+#X obj 51 524 stdout;
 #X obj 51 407 i;
 #X obj 51 428 change;
-#X msg 51 476 justesse \$1;
+#X msg 51 502 justesse \$1;
 #X obj 296 183 r Player\$1-env;
-#X obj 312 409 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3429 1;
+#X obj 312 409 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 296 340 clip 0 100;
-#X obj 296 452 stdout;
+#X obj 295 484 stdout;
 #X obj 296 361 i;
 #X obj 296 382 change;
-#X msg 296 430 force \$1;
+#X msg 295 462 force \$1;
 #X obj 296 204 - 70;
 #X obj 296 227 * 8;
 #X obj 296 273 clip 0 130;
@@ -357,20 +347,15 @@
 #X obj 551 292 > 26, f 8;
 #X obj 596 270 r ImpactSeuil;
 #X obj 551 377 stdout;
-#X msg 551 355 impact;
-#X obj 438 131 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 438 131 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 420 175 f;
-#X obj 412 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 412 123 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 296 250 spigot 1;
 #X obj 387 151 == 0;
 #X obj 420 154 metro 92;
-#X obj 337 69 hsl 128 15 0 150 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 337 69 hsl 128 15 0 150 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 319 113 f;
-#X obj 311 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 311 61 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 51 311 spigot 1;
 #X obj 286 89 == 0;
 #X obj 319 92 metro 92;
@@ -378,6 +363,9 @@
 #X obj 51 361 asymFilter 0.04 0.04 juste_speed;
 #X obj 296 295 asymFilter 0.4 0.2 force_speed;
 #X obj 296 316 asymFilter 0.4 0.2 force_speed;
+#X obj 51 481 / 100;
+#X obj 295 436 / 100;
+#X msg 551 355 impact 1;
 #X connect 0 0 2 1;
 #X connect 1 0 7 1;
 #X connect 1 1 0 0;
@@ -392,51 +380,53 @@
 #X connect 11 0 12 0;
 #X connect 11 1 2 0;
 #X connect 12 0 13 0;
-#X connect 13 0 50 0;
+#X connect 13 0 49 0;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
 #X connect 16 0 13 0;
 #X connect 17 0 19 0;
 #X connect 19 0 20 0;
 #X connect 20 0 4 0;
-#X connect 20 0 21 0;
+#X connect 20 0 56 0;
 #X connect 21 0 18 0;
 #X connect 22 0 29 0;
 #X connect 24 0 26 0;
 #X connect 26 0 27 0;
 #X connect 27 0 23 0;
-#X connect 27 0 28 0;
+#X connect 27 0 57 0;
 #X connect 28 0 25 0;
 #X connect 29 0 30 0;
-#X connect 30 0 44 0;
-#X connect 31 0 55 0;
+#X connect 30 0 43 0;
+#X connect 31 0 54 0;
 #X connect 32 0 33 0;
 #X connect 33 0 34 1;
 #X connect 33 1 34 0;
 #X connect 34 0 37 0;
 #X connect 35 0 36 0;
-#X connect 36 0 40 0;
+#X connect 36 0 58 0;
 #X connect 37 0 35 0;
 #X connect 38 0 37 1;
-#X connect 40 0 39 0;
-#X connect 41 0 42 1;
-#X connect 42 0 31 0;
-#X connect 43 0 45 0;
-#X connect 43 0 46 0;
-#X connect 44 0 31 0;
-#X connect 45 0 44 1;
-#X connect 46 0 42 0;
-#X connect 47 0 48 1;
-#X connect 48 0 53 0;
-#X connect 49 0 51 0;
+#X connect 40 0 41 1;
+#X connect 41 0 31 0;
+#X connect 42 0 44 0;
+#X connect 42 0 45 0;
+#X connect 43 0 31 0;
+#X connect 44 0 43 1;
+#X connect 45 0 41 0;
+#X connect 46 0 47 1;
+#X connect 47 0 52 0;
+#X connect 48 0 50 0;
+#X connect 48 0 51 0;
 #X connect 49 0 52 0;
-#X connect 50 0 53 0;
-#X connect 51 0 50 1;
-#X connect 52 0 48 0;
-#X connect 53 0 54 0;
-#X connect 54 0 17 0;
-#X connect 55 0 56 0;
-#X connect 56 0 24 0;
+#X connect 50 0 49 1;
+#X connect 51 0 47 0;
+#X connect 52 0 53 0;
+#X connect 53 0 17 0;
+#X connect 54 0 55 0;
+#X connect 55 0 24 0;
+#X connect 56 0 21 0;
+#X connect 57 0 28 0;
+#X connect 58 0 39 0;
 #X restore 53 221 pd analyse;
 #X connect 3 0 4 0;
 #X connect 6 0 7 0;
