@@ -3,20 +3,18 @@
 #X declare -path iemlib -lib iemlib -path zexy -lib zexy;
 #X declare -path absGAMME;
 #X declare -path AutoPreset;
-#N canvas 472 420 750 411 stuff 0;
+#N canvas 122 489 750 411 stuff 0;
 #X obj 19 188 loadbang;
 #X msg 19 209 \; pd dsp 1;
 #X obj 15 28 declare -path motex -path motex -lib motex;
-#X obj 15 47 declare -path iemlib -lib iemlib -path zexy -lib zexy
-;
+#X obj 15 47 declare -path iemlib -lib iemlib -path zexy -lib zexy;
 #X obj 19 73 loadbang;
 #X msg 19 94 1;
 #X obj 19 136 metro 20;
 #X obj 19 157 s LFOrnd-bang;
-#X obj 19 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 19 117 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 15 9 declare -path absGAMME;
-#N canvas 92 226 700 433 MASTER 0;
+#N canvas 92 226 700 433 MASTER 1;
 #X obj 134 19 catch~ master;
 #X obj 136 270 *~;
 #X obj 131 317 dac~;
@@ -27,14 +25,11 @@
 #X obj 480 256 mull~ 0 50;
 #X obj 480 279 rev3~ 100 90 2000 30;
 #X obj 10 39 catch~ master-norev;
-#X obj 298 170 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 4978 1;
+#X obj 298 170 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 4978 1;
 #X obj 176 248 limiter~;
 #X obj 136 249 z~ 64;
-#X obj 511 208 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 11300 1;
+#X obj 511 208 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 11200 1;
 #X obj 482 162 delwrite~ \$0-preDel 1000;
-#X obj 481 183 delread~ \$0-preDel 500;
 #X obj 295 139 r mix-Master-snd;
 #X obj 211 330 - 88;
 #X obj 211 351 i;
@@ -46,42 +41,43 @@
 #X obj 135 212 *~ 1;
 #X obj 480 333 dac~ 1 2 3 4 5 6 7 8 9 10;
 #X obj 481 133 lop~ 800;
-#X connect 0 0 24 0;
-#X connect 1 0 20 0;
-#X connect 1 0 23 0;
+#X obj 479 183 delread~ \$0-preDel 250;
+#X connect 0 0 23 0;
+#X connect 1 0 19 0;
+#X connect 1 0 22 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 6 0 7 1;
 #X connect 7 0 8 0;
-#X connect 8 0 25 0;
-#X connect 8 0 25 4;
-#X connect 8 0 25 8;
-#X connect 8 1 25 1;
-#X connect 8 1 25 5;
-#X connect 8 1 25 9;
-#X connect 8 2 25 2;
-#X connect 8 2 25 6;
-#X connect 8 3 25 3;
-#X connect 8 3 25 7;
-#X connect 9 0 24 0;
+#X connect 8 0 24 0;
+#X connect 8 0 24 4;
+#X connect 8 0 24 8;
+#X connect 8 1 24 1;
+#X connect 8 1 24 5;
+#X connect 8 1 24 9;
+#X connect 8 2 24 2;
+#X connect 8 2 24 6;
+#X connect 8 3 24 3;
+#X connect 8 3 24 7;
+#X connect 9 0 23 0;
 #X connect 10 0 3 0;
 #X connect 11 0 1 1;
 #X connect 12 0 1 0;
 #X connect 13 0 6 0;
-#X connect 15 0 7 0;
-#X connect 16 0 10 0;
+#X connect 15 0 10 0;
+#X connect 16 0 17 0;
 #X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 19 0 21 0;
-#X connect 20 0 17 0;
-#X connect 22 0 26 0;
-#X connect 24 0 11 0;
-#X connect 24 0 12 0;
-#X connect 26 0 14 0;
+#X connect 18 0 20 0;
+#X connect 19 0 16 0;
+#X connect 21 0 25 0;
+#X connect 23 0 11 0;
+#X connect 23 0 12 0;
+#X connect 25 0 14 0;
+#X connect 26 0 7 0;
 #X restore 18 260 pd MASTER;
 #N canvas 1176 139 637 401 aleaGamme 0;
 #X obj 297 90 GAMMEKB \$0-xtalgam;
-#X floatatom 214 60 5 0 0 0 - - -;
+#X floatatom 214 60 5 0 0 0 - - - 0;
 #X obj 114 92 GAMMEKB \$0-gam;
 #X obj 214 35 r \$0-gam;
 #N canvas 1445 151 450 300 rot 0;
@@ -118,23 +114,21 @@
 #X obj 265 36 r \$0-basse;
 #X obj 35 57 s \$0-gam;
 #X obj 18 195 random 12;
-#X obj 45 149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 45 149 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 50 257 + 24;
 #X obj 25 301 s \$0-basse;
-#X obj 25 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 25 105 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 22 81 loadbang;
 #X obj 458 90 r \$0-xtalgam;
 #X msg 8 33 2709;
 #X obj 459 111 s /GAMME;
 #X obj 443 145 s /CHORD;
 #X msg 8 236 0;
-#X floatatom 513 144 8 0 0 0 - - -;
-#X floatatom 174 38 5 0 0 0 - - -;
+#X floatatom 513 144 8 0 0 0 - - - 0;
+#X floatatom 174 38 5 0 0 0 - - - 0;
 #X obj 99 252 GAMMEKB \$0-gam2;
 #X obj 338 196 GAMMEKB \$0-xtalgam2;
-#X floatatom 222 169 5 0 0 0 - - -;
+#X floatatom 222 169 5 0 0 0 - - - 0;
 #N canvas 1445 151 450 300 rot 0;
 #X obj 92 18 inlet;
 #X obj 92 89 t f f;
@@ -174,7 +168,7 @@
 #X msg 118 205 5;
 #X msg 149 206 7;
 #X obj 87 228 f;
-#X floatatom 131 343 5 0 0 0 - - -;
+#X floatatom 131 343 5 0 0 0 - - - 0;
 #X msg 180 204 8;
 #X obj 87 178 sel 0 1 2 3, f 20;
 #X msg 112 40 2741;
@@ -182,8 +176,7 @@
 #X msg 46 33 145;
 #X obj 37 7 loadbang;
 #X obj 87 157 random 3;
-#X obj 18 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 18 172 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 28 122 metro 16000;
 #X connect 1 0 4 0;
 #X connect 3 0 1 0;
@@ -250,8 +243,8 @@
 #X obj 88 334 loadbang;
 #X obj 88 473 osc~;
 #X obj 88 558 throw~ master;
-#X floatatom 25 464 5 0 0 0 - - -;
-#X floatatom 45 363 5 0 0 0 - - -;
+#X floatatom 25 464 5 0 0 0 - - - 0;
+#X floatatom 45 363 5 0 0 0 - - - 0;
 #X obj 229 392 gammeRound /GAMME 300;
 #X obj 229 467 osc~;
 #X msg 88 373 68.1;
@@ -259,7 +252,7 @@
 #X obj 380 465 osc~;
 #X msg 229 367 62.1;
 #X obj 88 534 lop~ 500;
-#X floatatom 421 360 5 0 0 0 - - -;
+#X floatatom 421 360 5 0 0 0 - - - 0;
 #X msg 380 365 72.6;
 #X obj 433 541 osc~ 6;
 #X obj 380 444 mtof~;
@@ -341,8 +334,7 @@
 #X obj 20 333 r Analyse;
 #X obj 20 354 spigot;
 #X obj 20 375 print;
-#X obj 69 356 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 69 356 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 421 32 declare -path AutoPreset;
 #X obj 133 234 auxpd 1 Player;
 #X obj 272 234 auxpd 2 Player;
@@ -354,12 +346,9 @@
 #X obj 433 77 r \$0-reload;
 #X obj 421 53 r config-reload;
 #X obj 588 57 r config-save;
-#X obj 433 125 cnv 15 200 30 empty empty empty 20 12 0 14 -228856 -66577
-0;
-#X obj 533 132 bng 20 250 50 0 \$0-reload \$0-reload reload 24 10 0
-20 -4034 -1 -1;
-#X obj 442 132 bng 20 250 50 0 \$0-save \$0-save save 24 10 0 20 -258113
--1 -1;
+#X obj 433 125 cnv 15 200 30 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
+#X obj 533 132 bng 20 250 50 0 \$0-reload \$0-reload reload 24 10 0 20 #00fc04 #000000 #000000;
+#X obj 442 132 bng 20 250 50 0 \$0-save \$0-save save 24 10 0 20 #fc0400 #000000 #000000;
 #X obj 548 234 auxpd 4 Player;
 #X obj 133 280 auxpd 5 Player;
 #X obj 272 280 auxpd 6 Player;
@@ -379,8 +368,7 @@
 #X connect 26 0 22 0;
 #X connect 27 0 22 1;
 #X restore 27 77 pd stuff;
-#X obj 16 9 cnv 15 300 40 empty empty Singing_Lights_Laser 10 20 2
-30 -233017 -66577 0;
+#X obj 16 9 cnv 15 300 40 empty empty Singing_Lights_Laser 10 20 2 30 #e0e0e0 #404040 0;
 #X obj 27 97 send_OSC;
 #X obj 27 118 OSCremote/RemoteMaster;
 #X obj 317 138 rem mixer;
