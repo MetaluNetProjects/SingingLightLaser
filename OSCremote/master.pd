@@ -1,0 +1,12 @@
+#N canvas 605 490 585 421 12;
+#X obj 29 23 param VoixM Nappe;
+#X obj 29 44 param VoixM SynthMono;
+#X obj 28 75 param VoixM Accord;
+#X obj 28 96 param VoixM Basse;
+#X obj 209 24 param VoixM thresimpact;
+#X obj 208 65 param VoixM force_speedup;
+#X obj 208 87 param VoixM force_speeddn;
+#X obj 208 111 param VoixM juste_speedup;
+#X obj 208 133 param VoixM juste_speeddn;
+#X obj 415 26 file_osc config;
+#X obj 29 131 param VoixM MASTER;

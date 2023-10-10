@@ -1,0 +1,26 @@
+#N canvas 323 254 442 300 12;
+#X obj 86 7 r \$2;
+#X obj 188 80 loadbang;
+#X obj 252 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 188 128 sel 0;
+#X obj 188 152 symbol \$2;
+#X obj 188 176 t a;
+#X obj 86 203 list prepend __;
+#X obj 86 140 f;
+#X obj 99 111 r \$1-resend;
+#X obj 86 227 s \$1-topd;
+#X obj 188 104 list append \$3;
+#X obj 86 64 route float;
+#X connect 0 0 11 0;
+#X connect 1 0 10 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 3 0;
+#X connect 11 0 7 0;
