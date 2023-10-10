@@ -1,9 +1,9 @@
-#N canvas 30 426 508 452 10;
+#N canvas 30 453 391 166 10;
 #X declare -path motex -path motex -lib motex;
 #X declare -path iemlib -lib iemlib -path zexy -lib zexy;
 #X declare -path absGAMME;
 #X declare -path AutoPreset;
-#N canvas 472 420 712 422 stuff 1;
+#N canvas 472 420 750 411 stuff 0;
 #X obj 19 188 loadbang;
 #X msg 19 209 \; pd dsp 1;
 #X obj 15 28 declare -path motex -path motex -lib motex;
@@ -16,7 +16,7 @@
 #X obj 19 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 15 9 declare -path absGAMME;
-#N canvas 92 226 700 433 MASTER 1;
+#N canvas 92 226 700 433 MASTER 0;
 #X obj 134 19 catch~ master;
 #X obj 136 270 *~;
 #X obj 131 317 dac~;
@@ -344,9 +344,9 @@
 #X obj 69 356 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 421 32 declare -path AutoPreset;
-#X obj 181 214 auxpd 1 Player;
-#X obj 275 214 auxpd 2 Player;
-#X obj 370 214 auxpd 3 Player;
+#X obj 133 234 auxpd 1 Player;
+#X obj 272 234 auxpd 2 Player;
+#X obj 410 234 auxpd 3 Player;
 #X obj 588 33 apmaster config;
 #X obj 433 105 apmasterfile config config.txt;
 #X obj 512 76 loadbang;
@@ -360,11 +360,11 @@
 20 -4034 -1 -1;
 #X obj 442 132 bng 20 250 50 0 \$0-save \$0-save save 24 10 0 20 -258113
 -1 -1;
-#X obj 463 214 auxpd 4 Player;
-#X obj 181 260 auxpd 5 Player;
-#X obj 275 260 auxpd 6 Player;
-#X obj 370 260 auxpd 7 Player;
-#X obj 463 260 auxpd 8 Player;
+#X obj 548 234 auxpd 4 Player;
+#X obj 133 280 auxpd 5 Player;
+#X obj 272 280 auxpd 6 Player;
+#X obj 410 280 auxpd 7 Player;
+#X obj 548 280 auxpd 8 Player;
 #X connect 0 0 1 0;
 #X connect 4 0 5 0;
 #X connect 5 0 8 0;
@@ -383,4 +383,4 @@
 30 -233017 -66577 0;
 #X obj 27 97 send_OSC;
 #X obj 27 118 OSCremote/RemoteMaster;
-#X obj 28 223 rem mixer;
+#X obj 317 138 rem mixer;
