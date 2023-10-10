@@ -2,23 +2,20 @@
 #X msg 260 85 pd~ stop;
 #X obj 228 120 loadbang;
 #X msg 228 165 pd~ start -nogui \$1.pd;
-#X obj 22 42 bng 15 250 50 0 empty empty GUI 17 7 0 10 -4034 -1 -1
-;
+#X obj 22 42 bng 15 250 50 0 empty empty GUI 17 7 0 10 #00fc04 #000000 #000000;
 #X msg 113 165 pd~ start \$1.pd;
 #X obj 113 251 route _loaded;
 #X obj 113 272 b;
-#X obj 62 42 bng 15 250 50 0 empty empty noGUI 17 7 0 10 -257985 -1
--1;
+#X obj 62 42 bng 15 250 50 0 empty empty noGUI 17 7 0 10 #f8fc00 #000000 #000000;
 #X obj 113 230 pd~ -ninsig 1 -noutsig 1, f 34;
 #X obj 113 314 s \$0-resend;
-#X obj 82 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 82 288 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 113 293 del 10;
 #X obj 113 141 symbol \$2;
 #X obj 228 141 symbol \$2;
-#X obj 555 99 adc~ \$1;
-#X obj 576 149 param Voix\$1 ingain;
-#X obj 576 290 pow 2;
+#X obj 555 79 adc~ \$1;
+#X obj 576 129 param Voix\$1 ingain;
+#X obj 576 270 pow 2;
 #X obj 555 311 *~ 1;
 #X obj 554 380 i;
 #X obj 554 430 change;
@@ -59,16 +56,16 @@
 #X obj 400 384 del 250;
 #X msg 400 405 0;
 #X msg 400 425 list impact \$1;
-#X obj 609 53 param Voix\$1 locut;
-#X obj 554 121 hp6_butt~ 20, f 19;
-#X obj 609 95 + 50;
-#X obj 609 74 * 100;
-#X obj 603 180 r fromRemote;
-#X obj 603 201 route Voix\$1;
-#X obj 603 222 route mute;
-#X obj 576 263 * 1;
-#X obj 603 263 t b f;
-#X obj 603 243 == 0;
+#X obj 609 33 param Voix\$1 locut;
+#X obj 554 101 hp6_butt~ 20, f 19;
+#X obj 609 75 + 50;
+#X obj 609 54 * 100;
+#X obj 603 160 r fromRemote;
+#X obj 603 181 route Voix\$1;
+#X obj 603 202 route mute;
+#X obj 576 243 * 1;
+#X obj 603 243 t b f;
+#X obj 603 223 == 0;
 #X obj 379 180 pow 2;
 #X obj 379 156 * 1;
 #X obj 406 156 t b f;
@@ -82,8 +79,8 @@
 #X obj 955 101 param Voix\$1 wavform;
 #X obj 735 84 vxparam \$0 Voix\$1-smooth smooth;
 #X obj 735 102 vxparam \$0 Voix\$1-wavform wavform;
-#X obj 113 42 bng 15 250 50 0 empty empty stop 17 7 0 10 -258113 -1
--1;
+#X obj 113 42 bng 15 250 50 0 empty empty stop 17 7 0 10 #fc0400 #000000 #000000;
+#X obj 576 291 * 4;
 #X connect 0 0 8 0;
 #X connect 1 0 13 0;
 #X connect 2 0 8 0;
@@ -102,7 +99,7 @@
 #X connect 13 0 2 0;
 #X connect 14 0 58 0;
 #X connect 15 0 64 0;
-#X connect 16 0 17 1;
+#X connect 16 0 81 0;
 #X connect 17 0 20 0;
 #X connect 17 0 8 0;
 #X connect 18 0 25 0;
@@ -151,4 +148,5 @@
 #X connect 74 0 26 0;
 #X connect 75 0 74 1;
 #X connect 80 0 0 0;
+#X connect 81 0 17 1;
 #X coords 0 -1 1 1 135 40 1 20 20;
