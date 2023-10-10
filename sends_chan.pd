@@ -18,21 +18,22 @@
 #X msg 230 325 list vu \$1;
 #X msg 324 325 set sends_\$2 \$1;
 #X obj 324 222 loadbang;
-#X obj 391 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 391 221 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 324 277 - 1;
 #X obj 210 191 throw~ out\$1;
-#X floatatom 101 276 5 0 0 0 - - -;
+#X floatatom 101 276 5 0 0 0 - - - 0;
 #X obj 324 253 f \$1;
 #X obj 324 301 list append \$2;
 #X obj 137 211 / 5;
 #X obj 137 254 * 5;
+#X obj 6 91 f;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 0 10 0;
 #X connect 2 0 3 0;
 #X connect 4 0 2 0;
 #X connect 4 0 10 0;
+#X connect 4 0 27 0;
 #X connect 5 0 9 0;
 #X connect 6 0 26 0;
 #X connect 7 0 11 0;
@@ -55,3 +56,4 @@
 #X connect 24 0 17 0;
 #X connect 25 0 6 0;
 #X connect 26 0 7 0;
+#X connect 27 0 4 0;
