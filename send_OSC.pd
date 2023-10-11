@@ -1,4 +1,4 @@
-#N canvas 796 144 377 336 10;
+#N canvas 284 513 377 336 10;
 #X obj 25 212 netsend -b -u;
 #X obj 25 111 list prepend send;
 #X obj 25 135 list trim;
@@ -14,6 +14,7 @@
 #X obj 25 40 list;
 #X obj 25 83 oscformat -f f;
 #X obj 181 208 oscformat /connected;
+#X obj 136 53 print;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
