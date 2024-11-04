@@ -1,5 +1,6 @@
 # The scheduler reads blocks between lines starting with 'date'.
 # It will use the last block that has a 'date' lower than or equal to present date.
+# Date format is: date DAY MONTH (e.g "date 24 12" is december 24th)
 #
 # In this block, lines starting with 'hours' will apply to all days defined in the
 # last preceding line starting with 'days'.
