@@ -1,4 +1,4 @@
-#N canvas 572 241 1150 697 10;
+#N canvas 111 348 1150 697 10;
 #X msg 260 85 pd~ stop;
 #X obj 228 120 loadbang;
 #X msg 228 165 pd~ start -nogui \$1.pd;
@@ -67,9 +67,9 @@
 #X obj 379 180 pow 2;
 #X obj 406 156 t b f;
 #X obj 379 72 param Voix\$1 directlevel;
-#X obj 406 93 r fromRemote;
-#X obj 406 114 route Voix\$1;
-#X obj 406 135 route directout;
+#X obj 444 198 r fromRemote;
+#X obj 444 219 route Voix\$1;
+#X obj 444 240 route directout;
 #X obj 358 226 *~ 0;
 #X obj 956 83 param Voix\$1 smooth;
 #X obj 955 101 param Voix\$1 wavform;
@@ -93,6 +93,7 @@
 #X obj 675 491 s SLL-vus;
 #X obj 355 543 list prepend \$1;
 #X obj 355 566 s SLL-justesse;
+#X obj 406 95 param Voix\$1 directout;
 #X connect 0 0 86 0;
 #X connect 1 0 12 0;
 #X connect 2 0 86 0;
@@ -153,7 +154,6 @@
 #X connect 67 0 79 0;
 #X connect 68 0 69 0;
 #X connect 69 0 70 0;
-#X connect 70 0 66 0;
 #X connect 71 0 25 0;
 #X connect 76 0 0 0;
 #X connect 77 0 46 0;
@@ -170,4 +170,5 @@
 #X connect 89 0 26 0;
 #X connect 90 0 91 0;
 #X connect 92 0 93 0;
+#X connect 94 0 66 0;
 #X coords 0 -1 1 1 135 40 1 20 20;
