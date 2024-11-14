@@ -63,7 +63,7 @@
 #X floatatom 579 519 5 0 0 0 - - - 0;
 #X obj 658 490 s \$0-day;
 #X msg 43 614 0 \$1;
-#N canvas 378 125 556 441 scheduler_text 0;
+#N canvas 159 89 556 441 scheduler_text 0;
 #X obj 25 401 outlet;
 #X obj 294 40 r timer-schedule_text;
 #X msg 294 125 read -c ../schedule.txt;
@@ -181,7 +181,9 @@
 #X obj 109 358 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj 27 46 change;
 #X obj 265 128 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
+#X msg 241 94 set -1;
 #X connect 1 0 4 0;
+#X connect 1 0 40 0;
 #X connect 2 0 20 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
@@ -219,6 +221,7 @@
 #X connect 35 0 24 0;
 #X connect 36 0 24 0;
 #X connect 38 0 6 0;
+#X connect 40 0 38 0;
 #X restore 119 482 pd scheduler_text;
 #X obj 119 589 f;
 #X msg 119 614 1 \$1;
