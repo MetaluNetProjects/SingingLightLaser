@@ -1,4 +1,4 @@
-#N canvas 1060 208 805 500 12;
+#N canvas 1007 99 805 500 12;
 #X obj 40 77 oscparse;
 #X obj 40 101 list trim;
 #X obj 40 54 netreceive -u -b 8000;
@@ -39,7 +39,9 @@
 #X obj 718 222 bng 19 250 50 0 empty empty impact 0 28 0 12 #feffc6 #000000 #000000;
 #X obj 594 197 route force justesse impact;
 #X obj 465 163 route mic5 mic6 mic7 mic8;
+#X listbox 114 100 91 0 0 0 - - - 0;
 #X connect 0 0 1 0;
+#X connect 0 0 40 0;
 #X connect 1 0 21 0;
 #X connect 2 0 0 0;
 #X connect 8 0 5 0;
