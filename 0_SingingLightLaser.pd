@@ -433,5 +433,5 @@
 #X connect 26 0 21 1;
 #X restore 27 77 pd stuff;
 #X obj 16 9 cnv 15 300 40 empty empty Singing_Lights_Laser 10 20 2 30 #e0e0e0 #404040 0;
-#X obj 27 97 send_OSC;
 #X obj 27 118 OSCremote/RemoteMaster;
+#X obj 27 97 send_OSC_SingingLightLaser;
