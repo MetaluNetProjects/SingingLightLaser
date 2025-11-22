@@ -1,4 +1,4 @@
-#N canvas 143 408 522 169 10;
+#N canvas 38 431 571 214 10;
 #X obj 13 30 tgl 18 1 empty empty to_MAD_MAPPER 0 -9 0 10 #feffc6 #000000 #000000 0 1;
 #X obj 259 30 tgl 18 1 empty empty to_RESOLUME 0 -9 0 10 #feffc6 #000000 #000000 1 1;
 #X obj 13 53 send_OSC_SingingLightLaser_MadMapper;
@@ -17,6 +17,7 @@
 #X connect 5 0 2 0;
 #X restore 259 101 pd SingingLightLaser->Arbre;
 #X obj 259 53 send_OSC_SingingLightLaser_Resolume;
-#X text 257 118 ceci adapte l'Analyse de SingLightLaser aux anciens noms des contrôles de Arbre (mic1-justesse-snd etc.), f 40;
+#X text 257 118 Ceci adapte l'Analyse de SingingLightLaser aux anciens noms des contrôles de Arbre (mic1-justesse-snd etc.), f 44;
+#X text 259 161 C'est pour pouvoir réutiliser la couche OSC Resolume entre Arbre et SingingLightLaser., f 44;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
